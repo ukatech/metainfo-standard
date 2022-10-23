@@ -74,5 +74,49 @@ craftmanurl,https://github.com/Taromati2/Taromati2/blob/master/docs/CONTRIBUTORS
 languages,Simplified Chinese	//,Japanese,Engilsh may be available in future
 ```
 
-任何非`://`开头的`//`都会被视为注释，不应被解析  
-`//meta info`是必须的  
+任何非`://`开头的`//`直至行尾都会被视为注释，不应被解析  
+`//meta info`作为开头是必须的  
+以下选项必须：
+`type`：类型（以便日后标准拓展），必须为`ghost`  
+`name`：名称  
+`craftman`：制作者  
+`craftmanurl`：制作者链接  
+`languages`：ghost支持的自然语言，如有多个，用`,`分隔
+当`type`为`ghost`时，以下选项必须：
+`sakura.name`：使魔`\0`的名称
+考虑到ghost不一定有使仆，所以`kero.name`可选（非必须）：
+`kero.name`：使仆`\1`的名称（若有多个使仆，可以用`kero1.name`、`kero2.name`等等来区分）
+
+非必须：
+`has_terms`：是否有条款（0为否，1为是，不写默认0）  
+`icon`：图标链接（不写默认为metainfo文件夹中的`icon.png`（若文件存在））  
+
+##### `links`
+
+在`links`文件夹中，你可以存放任意数量的txt文件来存放相关链接信息，标准中规定（但非必须）的文件有：
+
+- `mirror_repo.txt`：若你的ghost的文件内容不在此仓库进行更新，你可以在此文件中写入你的镜像仓库链接  
+  链接应该是一个github仓库链接  
+- `nar_release_repo.txt`：若你的ghost的nar文件不在此仓库进行发布，你可以在此文件中写入你的nar发布仓库链接  
+  链接应该是一个github仓库链接
+
+其余的文件留给第三方进行标准拓展，日后不排除新增标准规定文件的可能性  
+推荐第三方拓展的文件若不是通用的，应该在文件名中加入web应用的名字或缩写，如`GCS_link.txt`
+
+##### `infos`
+
+在`infos`文件夹中，你可以存放任意数量的txt文件来存放web应用需要的相关信息  
+
+## 通过ghost定向到metainfo文件夹  
+
+鼓励ghost开发者在`ghost/descript.txt`中写入`metainfo`字段并后附metainfo文件夹的url，以便特定应用可以通过ghost定向到metainfo文件夹
+也可在`ghost/descript.txt`中写入`githubrepo`字段并后附github项目的url，两者效果相等且可同时存在  
+例子：
+
+```txt
+//...
+mousecursor.grip,./img/curs/hand_grip.cur
+//
+metainfo,https://github.com/Taromati2/Taromati2/tree/master/.ukagaka
+githubrepo,https://github.com/Taromati2/Taromati2
+```
