@@ -27,7 +27,7 @@ metainfo的出现就是为了解决这些问题
 ### 文件结构  
 
 ```filetree
-.ukagaka
+/.ukagaka
     ├── descript.txt
     ├── /preview
     │   ├── sakura.png
@@ -37,6 +37,13 @@ metainfo的出现就是为了解决这些问题
     └── /infos
 ```
 
+或
+
+```filetree
+/.ukagaka
+    └── jump_to.txt
+```
+
 #### 文件介绍  
 
 - `descript.txt`：ghost的描述文件，用于在web应用中提供基础信息  
@@ -44,6 +51,7 @@ metainfo的出现就是为了解决这些问题
 - `icon.png`：ghost的图标文件，用于在web应用中提供图标（不强制要求）  
 - `links`：ghost的链接文件夹，用于在web应用中提供可拓展的相关链接信息（不强制要求）
 - `infos`：ghost的信息文件夹，用于在web应用中提供可拓展的其他信息（不强制要求）
+- `jump_to.txt`：元信息文件夹跳转文件，用于重定向到新的元信息文件夹（只在当前文件夹废弃时使用）  
 
 #### 文件内容介绍
 
@@ -63,7 +71,7 @@ metainfo的出现就是为了解决这些问题
 //meta info
 type,ghost
 name,Taromati2
-//uuid,XXX
+uuid,R5dVNluBvKjtQqjP0dAuoA==
 sakura.name,橘花
 kero.name,斗和
 has_terms,1
@@ -76,20 +84,22 @@ languages,Simplified Chinese	//,Japanese,Engilsh may be available in future
 
 任何非`://`开头的`//`直至行尾都会被视为注释，不应被解析  
 `//meta info`作为开头是必须的  
-以下选项必须：
+以下选项必须：  
 `type`：类型（以便日后标准拓展），必须为`ghost`  
 `name`：名称  
 `craftman`：制作者  
 `craftmanurl`：制作者链接  
-`languages`：ghost支持的自然语言，如有多个，用`,`分隔
-当`type`为`ghost`时，以下选项必须：
-`sakura.name`：使魔`\0`的名称
-考虑到ghost不一定有使仆，所以`kero.name`可选（非必须）：
-`kero.name`：使仆`\1`的名称（若有多个使仆，可以用`kero1.name`、`kero2.name`等等来区分）
+`uuid`：唯一标识符，详见[UUID标准](#uuid)  
+`languages`：ghost支持的自然语言，如有多个，用`,`分隔  
+当`type`为`ghost`时，以下选项必须：  
+`sakura.name`：使魔`\0`的名称  
+考虑到ghost不一定有使仆，所以`kero.name`可选（非必须）：  
+`kero.name`：使仆`\1`的名称（若有多个使仆，可以用`kero1.name`、`kero2.name`等等来区分）  
 
 非必须：
 `has_terms`：是否有条款（0为否，1为是，不写默认0）  
 `icon`：图标链接（不写默认为metainfo文件夹中的`icon.png`（若文件存在））  
+`uuid_base`：用于防止uuid碰撞的uuid基础（详见[UUID标准](#uuid)）  
 
 ##### `links`
 
@@ -117,6 +127,31 @@ languages,Simplified Chinese	//,Japanese,Engilsh may be available in future
 //...
 mousecursor.grip,./img/curs/hand_grip.cur
 //
-metainfo,https://github.com/Taromati2/Taromati2/tree/master/.ukagaka
+metainfo,https://raw.githubusercontent.com/Taromati2/Taromati2/master/.ukagaka/
 githubrepo,https://github.com/Taromati2/Taromati2
 ```
+
+## uuid
+
+考虑到同名ghost或同ghost的不同分支版本可能会存在，所以uuid是必须的  
+web应用可以通过uuid来区分实际上不同的同名ghost  
+
+### uuid生成  
+
+要生成uuid，你需要先获得当前ghost的metainfo文件夹的url（以`UTF8`编码并且末尾无换行），然后对其进行md5加密，并对得到的二进制结果进行base64编码  
+如`https://raw.githubusercontent.com/Taromati2/Taromati2/master/.ukagaka/`所生成的uuid为`R5dVNluBvKjtQqjP0dAuoA==`  
+若ghost没有metainfo文件夹，uuid为二进制结果`0`的base64编码  
+若metainfo中有`uuid_base`字段，将其直接添加到上一步得到的uuid前面  
+`uuid_base`字段导致uuid不定长，但允许应用拒绝超过64位长度的uuid  
+
+### uuid校验  
+
+web应用应当在捕获到或接收到新的ghost时，对其uuid进行校验以检查信息合法性以避免任何混淆不同ghost的可能  
+对uuid的校验应当访问metainfo文件夹并检查是否有`jump_to.txt`文件，若有则应用需要更新此ghost的metainfo文件夹的url和其uuid  
+考虑到uuid可能因为metainfo文件夹地址的变更而变化，应用对应用的特定ghost相关请求中不应使用uuid来区分ghost，而是应当包含metainfo文件夹的url，以便uuid校验可以以最新的信息为准  
+允许应用缓存ghost过去的uuid来实现快速ghost匹配，但应当在匹配失败时更新缓存内容  
+若校验失败，应用应当拒绝此ghost的相关注册  
+
+### 缺点
+
+uuid只能保护已有uuid的ghost不被混淆或顶替，但无法保护历史中的无uuid的ghost不被混淆  
