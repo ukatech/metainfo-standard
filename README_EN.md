@@ -44,7 +44,7 @@ or
     └── jump_to.txt
 ```
 
-Introduction to the #### file  
+#### Introduction to the files  
 
 - `descript.txt`: ghost's description file, used to provide basic information in the web application  
 - `preview`: ghost's preview folder, used to provide preview images in the web application (not mandatory)  
@@ -53,7 +53,7 @@ Introduction to the #### file
 - `infos`: ghost's information folder, used to provide expandable additional information in the web application (not mandatory)
 - `jump_to.txt`: meta information folder jump file for redirecting to a new meta information folder (only used if the current folder is deprecated)  
 
-#### file content description
+#### files content description
 
 ##### `preview`
 
