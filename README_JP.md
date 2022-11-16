@@ -2,7 +2,7 @@
 
 ## metainfoとは？
 
-metainfoは、Webアプリケーションに必要な基本情報を含む伺かを表現するための拡張可能な標準規格です  
+metainfoは、Webアプリケーションに必要な基本情報を含む伺かを表現するための拡張可能な標準規格です。  
 
 ## なぜ metainfo を使うのか？
 
@@ -57,7 +57,7 @@ metainfoは、これらの問題を解決するために作られました。
 
 ##### `preview`
 
-`preview`フォルダにはいくつでもpngファイルを格納できるが、少なくとも2つのpngファイル（それぞれ `sakura.png` と `kero.png` という名前）を格納することを推奨します。  
+`preview`フォルダにはいくつでもpngファイルを格納できますが、少なくとも2つのpngファイル（それぞれ `sakura.png` と `kero.png` という名前）を格納することを推奨します。  
 動的なプレビューを提供したい場合は、`preview` フォルダに `sakura.apng` と `kero.apng` という名前でそれぞれ保存しておくとよいでしょう。  
 ゴーストに複数の相方がいる場合は、`kero1.png`, `kero2.png`, `kero3.png` などのように名前を追加することが可能です。  
 
@@ -96,9 +96,9 @@ languages,Simplified Chinese	//,Japanese,Engilsh may be available in future
 ghostが必ずしもサーバントを持つとは限らないことを考慮して、`kero.name`はオプション（必須ではありません）です。  
 `kero.name`: 相方 `kero1` の名前 (複数の相方がいる場合は `kero1.name`, `kero2.name` 等で区別できる)  
 
-オプション項目
+オプション項目  
 `has_terms`: 項目があるかどうか (ない場合は 0、ある場合は 1、書かれていない場合はデフォルト 0)  
-`icon`: アイコンのリンク (未記載の場合、デフォルトは metainfo フォルダにある `icon.png` (ファイルが存在する場合))  
+`icon`: アイコンのリンク (未記載の場合、デフォルトは metainfo フォルダにある `icon.png` (ファイルが存在する場合)  
 `uuid_base`: uuidの衝突を防ぐためのuuidベース (詳細は [UUID標準](#uuid) を参照)  
 
 ##### リンク
