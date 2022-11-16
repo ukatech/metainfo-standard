@@ -131,6 +131,8 @@ metainfo,https://raw.githubusercontent.com/Taromati2/Taromati2/master/.ukagaka/
 githubrepo,https://github.com/Taromati2/Taromati2
 ```
 
+没有metainfo的ghost可以通过这种方式追加metainfo和uuid  
+
 ## uuid
 
 考虑到同名ghost或同ghost的不同分支版本可能会存在，所以uuid是必须的  
@@ -148,10 +150,14 @@ web应用可以通过uuid来区分实际上不同的同名ghost
 
 web应用应当在捕获到或接收到新的ghost时，对其uuid进行校验以检查信息合法性以避免任何混淆不同ghost的可能  
 对uuid的校验应当访问metainfo文件夹并检查是否有`jump_to.txt`文件，若有则应用需要更新此ghost的metainfo文件夹的url和其uuid  
-考虑到uuid可能因为metainfo文件夹地址的变更而变化，应用对应用的特定ghost相关请求中不应使用uuid来区分ghost，而是应当包含metainfo文件夹的url，以便uuid校验可以以最新的信息为准  
+考虑到uuid可能因为metainfo文件夹地址的变更而变化，同一个ghost可能有多个历史uuid。  
+应用对应用的特定ghost相关请求和逻辑构建中不应使用uuid来区分ghost，而是应当包含metainfo文件夹的url，以便uuid校验可以以最新的信息为准  
 允许应用缓存ghost过去的uuid来实现快速ghost匹配，但应当在匹配失败时更新缓存内容  
 若校验失败，应用应当拒绝此ghost的相关注册  
 
+**重要：** 没有uuid的ghost不应和同名的有uuid的ghost混淆  
+向已存在的ghost追加uuid的方法详见[通过ghost定向到metainfo文件夹](#通过ghost定向到metainfo文件夹)  
+
 ### 缺点
 
-uuid只能保护已有uuid的ghost不被混淆或顶替，但无法保护历史中的无uuid的ghost不被混淆  
+uuid只能保护已有uuid的ghost不被混淆或顶替，但无法保护历史中的无uuid的ghost不被顶替  
