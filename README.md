@@ -146,7 +146,7 @@ metainfoを持たないゴーストは、このようにmetainfoとuuidを付加
 
 ### uuidの生成  
 
-uuidの原則を気にしないのであれば、[uuid-genner](https://github.com/ukatech/metainfo-standard/tree/master/uuid-genner)を使えば、コードを書かずにuuidを生成することができます。
+uuidの原則を気にしないのであれば、[uuid-genner](https://github.com/ukatech/metainfo-standard/tree/master/uuid-genner)を使えば、コードを書かずにuuidを生成することができます。  
 uuidを生成するには、現在のゴーストのmetainfoフォルダのURLを取得し（`UTF8`でエンコードし、最後に改行しない）、それをmd5で暗号化し、バイナリ結果をbase64でエンコードする必要があります。  
 例えば、`https://raw.githubusercontent.com/Taromati2/Taromati2/master/.ukagaka/` が生成する uuid は `R5dVNluBvKjtQqjP0dAuoA==` です。  
 ghostにmetainfoフォルダがない場合、uuidはbase64エンコードされ、結果は`0`となります。  

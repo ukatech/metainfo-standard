@@ -140,7 +140,7 @@ web应用可以通过uuid来区分实际上不同的同名ghost
 
 ### uuid生成  
 
-若你对uuid原理不关心，可以直接使用[uuid-genner](https://github.com/ukatech/metainfo-standard/tree/master/uuid-genner)生成uuid。
+若你对uuid原理不关心，可以直接使用[uuid-genner](https://github.com/ukatech/metainfo-standard/tree/master/uuid-genner)生成uuid。  
 要生成uuid，你需要先获得当前ghost的metainfo文件夹的url（以`UTF8`编码并且末尾无换行），然后对其进行md5加密，并对得到的二进制结果进行base64编码  
 如`https://raw.githubusercontent.com/Taromati2/Taromati2/master/.ukagaka/`所生成的uuid为`R5dVNluBvKjtQqjP0dAuoA==`  
 若ghost没有metainfo文件夹，uuid为二进制结果`0`的base64编码  
