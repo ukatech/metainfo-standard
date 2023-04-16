@@ -7,7 +7,7 @@ metainfo是一种用于描述伪春菜的可扩展标准，它包含了web应用
 ## 为什么用metainfo？  
 
 以GCS为例
-考虑现版本的GCS所需求的信息架构，当你需要客制化CGS中你的ghost的预览图时，你需要在`shell/matser`存放一或两个用户根本用不到的apng文件  
+考虑现版本的GCS所需求的信息架构，当你需要客制化CGS中你的ghost的预览图时，你需要在`shell/master`存放一或两个用户根本用不到的apng文件  
 这不仅扰乱了项目布局，也让不同用处的文件混在一起，不利于项目维护  
 再考虑现有版本的GCS所提供的跳转功能，它只能跳转至作者的主页，缺乏自定义和客制化的功能  
 metainfo的出现就是为了解决这些问题  
@@ -79,7 +79,7 @@ icon,https://github.com/Taromati2/other/raw/master/discord_app/kikka_eye_open.pn
 homeurl,https://raw.githubusercontent.com/Taromati2/stable-mirror/master/Taromati2/
 craftman,8 and other contributors
 craftmanurl,https://github.com/Taromati2/Taromati2/blob/master/docs/CONTRIBUTORS.md
-languages,Simplified Chinese	//,Japanese,Engilsh may be available in future
+languages,Simplified Chinese	//,Japanese,English may be available in future
 ```
 
 任何非`://`开头的`//`直至行尾都会被视为注释，不应被解析  
