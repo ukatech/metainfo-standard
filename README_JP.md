@@ -7,7 +7,7 @@ metainfoは、Webアプリケーションに必要な基本情報を含む伺か
 ## なぜ metainfo を使うのか？
 
 [ゴーストキャプターさくら](http://buynowforsale.shillest.net/ghosts/)(GCS)を例にしましょう。
-現在のGCSのバージョンで必要とされる情報アーキテクチャを考えてみましょう。 GCSでゴーストのプレビュー画像をカスタマイズする必要があるとき、ユーザーが使うこともない1つか2つのapngファイルを `shell/matser` に保存する必要があるのです。  
+現在のGCSのバージョンで必要とされる情報アーキテクチャを考えてみましょう。 GCSでゴーストのプレビュー画像をカスタマイズする必要があるとき、ユーザーが使うこともない1つか2つのapngファイルを `shell/master` に保存する必要があるのです。  
 これでは、プロジェクトのレイアウトが乱れるだけでなく、用途の異なるファイルが混在することになり、プロジェクトのメンテナンスに支障をきたします。  
 現在のGCSのバージョンで提供されているリダイレクトは、作者のホームページへのリダイレクトのみで、カスタマイズに欠けることを考慮してください。  
 metainfoは、これらの問題を解決するために作られました。  
@@ -79,7 +79,7 @@ icon,https://github.com/Taromati2/other/raw/master/discord_app/kikka_eye_open.pn
 homeurl,https://raw.githubusercontent.com/Taromati2/stable-mirror/master/Taromati2/
 craftman,8 and other contributors
 craftmanurl,https://github.com/Taromati2/Taromati2/blob/master/docs/CONTRIBUTORS.md
-languages,Simplified Chinese	//,Japanese,Engilsh may be available in future
+languages,Simplified Chinese	//,Japanese,English may be available in future
 ```
 
 行末までの `://` で始まらない `//` はコメントとして扱われ、解析されません。  
