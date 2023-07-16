@@ -116,6 +116,31 @@ ghostが必ずしもサーバントを持つとは限らないことを考慮し
 - `nar_release_repo.txt`: あなたのゴーストのnarファイルがこのリポジトリでリリースされていない場合、このファイルにあなたのnarリリースリポジトリへのリンクを記述することができます。  
   リンクは github リポジトリのリンクである必要があります。
 
+上記のファイルの内容は、次のように複数の空白行末を持つ単一のURLにすることができます。  
+
+**nar_release_repo.txt**
+
+```txt
+https://github.com/Taromati2/package-factory
+
+
+```
+
+また、より多くの情報やオプションのコメントを含む複雑なものにすることもできる。  
+この場合、上記のファイルの内容は `UTF8` エンコードされるべきであり、行末までの `://` で始まらない `//` はコメントとみなされ、解析されるべきではありません。  
+
+**nar_release_repo.txt**
+
+```txt
+//a info file to tell the web app where to find the nar release repo
+link, https://github.com/Taromati2/package-factory
+nar_file_name, Taromati2.nar  //the nar file name
+
+```
+
+この場合、`link` フィールドは必須で、他のフィールドはオプションです。  
+`nar_file_name` フィールドは `nar_release_repo.txt` で使用され、ゴーストの nar ファイルとみなすべきリポのリリースの nar ファイルをウェブアプリケーションに伝えます。  
+
 それ以外のファイルは、標準的な拡張子はサードパーティに任せ、標準仕様のファイルを新たに追加する可能性は、後から排除することができます。  
 一般的ではない推奨のサードパーティ製拡張機能は、ファイル名にウェブアプリケーション名またはその略称を含めるべきです（例：`GCS_link.txt`）。
 

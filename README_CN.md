@@ -110,6 +110,31 @@ languages,Simplified Chinese	//,Japanese,English may be available in future
 - `nar_release_repo.txt`：若你的ghost的nar文件不在此仓库进行发布，你可以在此文件中写入你的nar发布仓库链接  
   链接应该是一个github仓库链接
 
+以上文件的内容可以是单个url配上多个空行结尾，如这样  
+
+**nar_release_repo.txt**
+
+```txt
+https://github.com/Taromati2/package-factory
+
+
+```
+
+也可以是更为复杂的内容，带有更多的信息以及可选的注释  
+在这种情况下，以上文件的内容都应该是`UTF8`编码并且任何非`://`开头的`//`直至行尾都会被视为注释，不应被解析  
+
+**nar_release_repo.txt**
+
+```txt
+//a info file to tell the web app where to find the nar release repo
+link, https://github.com/Taromati2/package-factory
+nar_file_name, Taromati2.nar  //the nar file name
+
+```
+
+在这种情况下，`link`字段是必须的，而其他字段是可选的。  
+`nar_file_name`字段在`nar_release_repo.txt`中用于告知web应用应该将repo的release中的哪个nar文件视为ghost的nar文件，这在一个release中有多个nar文件的情况下非常有用  
+
 其余的文件留给第三方进行标准拓展，日后不排除新增标准规定文件的可能性  
 推荐第三方拓展的文件若不是通用的，应该在文件名中加入web应用的名字或缩写，如`GCS_link.txt`
 

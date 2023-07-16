@@ -115,6 +115,31 @@ In the `links` folder you can store as many txt files as you like to hold the re
 - `nar_release_repo.txt`: if your ghost's nar files are not released in this repository, you can write a link to your nar release repository in this file.  
   The link should be a github repository link.
 
+The content of the above file can be a single url with multiple blank line endings, like this  
+
+**nar_release_repo.txt**
+
+```txt
+https://github.com/Taromati2/package-factory
+
+
+```
+
+It can also be more complex, with more information and optional comments.  
+In this case, the content of the above files should be `UTF8` encoded and any `//` that does not start with `://` up to the end of the line is considered a comment and should not be parsed.  
+
+**nar_release_repo.txt**
+
+```txt
+//a info file to tell the web app where to find the nar release repo
+link, https://github.com/Taromati2/package-factory
+nar_file_name, Taromati2.nar  //the nar file name
+
+```
+
+In this case, the `link` field is required and the other fields are optional.  
+The `nar_file_name` field is used in `nar_release_repo.txt` to tell the web application which nar file in the release of the repo should be considered as the ghost's nar file, which is useful in cases where there are multiple nar files in a release  
+
 The rest of the files are left to third parties for standard extensions, and the possibility of adding new standard-specified files can be ruled out later.  
 Recommended third-party extensions that are not generic should include the name of the web application or an abbreviation in the file name, e.g. `GCS_link.txt`
 
