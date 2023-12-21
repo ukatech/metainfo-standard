@@ -103,8 +103,8 @@ ghostが必ずしもサーバントを持つとは限らないことを考慮し
 `kero.name`: 相方 `kero1` の名前 (複数の相方がいる場合は `kero1.name`, `kero2.name` 等で区別できる)  
 
 オプション項目  
-`has_terms`: 項目があるかどうか (ない場合は 0、ある場合は 1、書かれていない場合はデフォルト 0)  
-`icon`: アイコンのリンク (未記載の場合、デフォルトは metainfo フォルダにある `icon.png` (ファイルが存在する場合)  
+`has_terms`: 項目([`terms.txt`](https://ssp.shillest.net/ukadoc/manual/manual_directory.html))があるかどうか (ない場合は 0、ある場合は 1、書かれていない場合はデフォルト 0)  
+`icon`: アイコンのリンク (未記載の場合、デフォルトは metainfo フォルダにある `icon.png` (ファイルが存在する場合))  
 `uuid_base`: uuidの衝突を防ぐためのuuidベース (詳細は [UUID標準](#uuid) を参照)  
 
 ##### リンク

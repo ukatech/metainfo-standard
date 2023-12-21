@@ -97,7 +97,7 @@ languages,Simplified Chinese	//,Japanese,English may be available in future
 `kero.name`：使仆`\1`的名称（若有多个使仆，可以用`kero1.name`、`kero2.name`等等来区分）  
 
 非必须：
-`has_terms`：是否有条款（0为否，1为是，不写默认0）  
+`has_terms`：是否有条款([`terms.txt`](https://ssp.shillest.net/ukadoc/manual/manual_directory.html))（0为否，1为是，不写默认0）  
 `icon`：图标链接（不写默认为metainfo文件夹中的`icon.png`（若文件存在））  
 `uuid_base`：用于防止uuid碰撞的uuid基础（详见[UUID标准](#uuid)）  
 

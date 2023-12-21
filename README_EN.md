@@ -102,7 +102,7 @@ When `type` is `ghost`, the following options are required:
 
 The following options are not required:
 
-`has_terms`: Whether or not there are terms (0 for no, 1 for yes; default is 0 if not specified)  
+`has_terms`: Whether or not there are terms([`terms.txt`](https://ssp.shillest.net/ukadoc/manual/manual_directory.html)) (0 for no, 1 for yes; default is 0 if not specified)  
 `icon`: Icon link (If not specified, defaults to `icon.png` in the metainfo folder (if the file exists))  
 `uuid_base`: uuid base for preventing uuid collisions (see [UUID standard](#uuid) for details)
 
