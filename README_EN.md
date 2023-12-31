@@ -172,7 +172,7 @@ Given that a UUID may change due to the addition or modification of a metainfo f
 
 ### UUID Generation
 
-If you're not concerned with the principles of UUID generation, you can use [uuid-genner](https://github.com/ukatech/metainfo-standard/tree/master/uuid-genner) to generate a UUID directly. The steps to generate a UUID are as follows:  
+If you're not concerned with the principles of UUID generation, you can use [uuid-genner](https://ukatech.github.io/metainfo-standard/uuid-genner/) to generate a UUID directly. The steps to generate a UUID are as follows:  
 
 1. If the ghost has a metainfo folder, use its URL as the `uuidvalue`.  
   If the ghost does not have a metainfo folder, use its home URL as the `uuidvalue`.  

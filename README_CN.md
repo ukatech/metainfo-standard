@@ -167,7 +167,7 @@ web应用可以通过uuid来区分实际上不同的同名ghost
 
 ### uuid生成  
 
-若你对uuid原理不关心，可以直接使用[uuid-genner](https://github.com/ukatech/metainfo-standard/tree/master/uuid-genner)生成uuid。  
+若你对uuid原理不关心，可以直接使用[uuid-genner](https://ukatech.github.io/metainfo-standard/uuid-genner/)生成uuid。  
 生成UUID的方法：
 
 1.若ghost有metainfo文件夹，将其url作为`uuidvalue`  

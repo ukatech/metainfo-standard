@@ -173,7 +173,7 @@ UUIDは、metainfoフォルダのアドレスやhomeurlの追加や変更によ�
 
 ### UUIDの生成
 
-UUIDの生成原理については気にしない場合、[uuid-genner](https://github.com/ukatech/metainfo-standard/tree/master/uuid-genner)を使用してUUIDを直接生成することができます。  
+UUIDの生成原理については気にしない場合、[uuid-genner](https://ukatech.github.io/metainfo-standard/uuid-genner/)を使用してUUIDを直接生成することができます。  
 UUIDの生成方法は以下の通りです：  
 
 1. ゴーストがmetainfoフォルダを持っている場合、そのURLを`uuidvalue`として使用します。
