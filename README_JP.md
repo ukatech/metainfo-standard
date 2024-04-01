@@ -170,11 +170,11 @@ UUIDは、metainfoフォルダのアドレスやhomeurlの追加や変更によ�
 UUIDの生成原理については気にしない場合、[uuid-genner](https://ukatech.github.io/metainfo-standard/uuid-genner/)を使用してUUIDを直接生成することができます。  
 UUIDの生成方法は以下の通りです：  
 
-1. ゴーストがmetainfoフォルダを持っている場合、そのURLを`uuidvalue`として使用します。
-  ゴーストがmetainfoフォルダを持っていない場合、そのhomeurlを`uuidvalue`として使用します。
-  ゴーストがhomeurlを持っていない場合、その名前を`uuidvalue`として使用します。
-2. ゴーストが`uuid_base`フィールドを持っている場合、その内容を既存の`uuidvalue`に追加します。
-3. `uuidvalue`を`UTF8`でエンコードし、改行を追加せずにMD5で暗号化し、その結果をbase64でエンコードします。
+1. ゴーストがmetainfoフォルダを持っている場合、そのURLを`uuidvalue`として使用します。  
+  ゴーストがmetainfoフォルダを持っていない場合、そのhomeurlを`uuidvalue`として使用します。  
+  ゴーストがhomeurlを持っていない場合、その名前を`uuidvalue`として使用します。  
+2. ゴーストが`uuid_base`フィールドを持っている場合、その内容を既存の`uuidvalue`に追加します。  
+3. `uuidvalue`を`UTF8`でエンコードし、改行を追加せずにMD5で暗号化し、その結果をbase64でエンコードします。  
 
 例えば、`https://raw.githubusercontent.com/Taromati2/Taromati2/master/.ukagaka/`から生成されるUUIDは`R5dVNluBvKjtQqjP0dAuoA==`です。  
 

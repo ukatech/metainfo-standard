@@ -170,11 +170,11 @@ web应用可以通过uuid来区分实际上不同的同名ghost
 若你对uuid原理不关心，可以直接使用[uuid-genner](https://ukatech.github.io/metainfo-standard/uuid-genner/)生成uuid。  
 生成UUID的方法：
 
-1.若ghost有metainfo文件夹，将其url作为`uuidvalue`  
+1. 若ghost有metainfo文件夹，将其url作为`uuidvalue`  
   若ghost没有metainfo文件夹，将其homeurl作为`uuidvalue`  
-  若ghost没有homeurl，将其名称作为`uuidvalue`
-2.若ghost有`uuid_base`字段，将其内容附加在现有的`uuidvalue`后  
-3.将`uuidvalue`以`UTF8`编码并且末尾无换行，然后对其进行md5加密，并对得到的二进制结果进行base64编码  
+  若ghost没有homeurl，将其名称作为`uuidvalue`  
+2. 若ghost有`uuid_base`字段，将其内容附加在现有的`uuidvalue`后  
+3. 将`uuidvalue`以`UTF8`编码并且末尾无换行，然后对其进行md5加密，并对得到的二进制结果进行base64编码  
 
 如`https://raw.githubusercontent.com/Taromati2/Taromati2/master/.ukagaka/`所生成的uuid为`R5dVNluBvKjtQqjP0dAuoA==`  
 

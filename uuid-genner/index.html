@@ -2,7 +2,19 @@
 <html>
 <head>
 	<title>UUID Generator</title>
+	<script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.80/darkreader.min.js"></script>
+	<script>
+		DarkReader.setFetchMethod(window.fetch)
+		DarkReader.auto()
+	</script>
 	<script src="https://cdn.jsdelivr.net/gh/emn178/js-md5/build/md5.min.js"></script>
+</head>
+<body>
+	<label for="metainfoUrl">Metainfo URL|Home URL|Name:</label><br>
+	<input type="text" id="metainfoUrl" name="metainfoUrl"><br>
+	<label for="uuidBase">uuidBase:</label><br>
+	<input type="text" id="uuidBase" name="uuidBase"><br>
+	<button onclick="generateUUID()">Generate UUID</button>
 	<script>
 		function generateUUID() {
 			var metainfoUrl = document.getElementById('metainfoUrl').value;
@@ -15,13 +27,6 @@
 			document.getElementById('result').innerText = 'UUID: ' + uuid;
 		}
 	</script>
-</head>
-<body>
-	<label for="metainfoUrl">Metainfo URL|Home URL|Name:</label><br>
-	<input type="text" id="metainfoUrl" name="metainfoUrl"><br>
-	<label for="uuidBase">uuidBase:</label><br>
-	<input type="text" id="uuidBase" name="uuidBase"><br>
-	<button onclick="generateUUID()">Generate UUID</button>
 	<p id="result"></p>
 </body>
 </html>
